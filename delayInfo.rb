@@ -13,7 +13,7 @@ db = SQLite3::Database.new 'delayInfo.db'
 db.execute('DELETE FROM infoTable')
 
 result.each do |data|
-  if data[:name] == ""
+  if data["name"] == ""
     next
   end
   sql = <<-SQL
