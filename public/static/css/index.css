@@ -1,0 +1,21 @@
+body{
+    background-color: #f5f5f5;
+}
+.my-container{
+      background-color: white;
+      border: solid 1px gray;
+      max-width: 1200px;
+      margin-top: 30px;
+}
+.my-h4{
+    background-color: #f5f5f5;
+    padding-left: 10px;
+    margin:0 auto;
+    border-left: solid 4px #343a40;
+    border-bottom: solid 1px #343a40;
+}
+
+.my-nav{
+}
+.my-table{
+}

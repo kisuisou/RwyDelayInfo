@@ -1,0 +1,32 @@
+<div class="container">
+<div id='app'>
+<h4 class="my-h4">遅延・運休路線</h4>
+<br>
+<p>現在運休または遅延が発生している鉄道路線を表示します。<br>詳細な情報に関しましては各鉄道会社のHP等でご確認ください。</p>
+<p>このサイトは<a href="https://rti-giken.jp/fhc/api/train_tetsudo/">鉄道遅延情報のjson</a>というWebAPIを利用して動作しています。</p>
+<table class="table table-striped my-table">
+<tr>
+<th>路線名</th><th>鉄道会社</th><th>最終更新日時</th>
+</tr>
+<tr v-for='info in infoArray'>
+<th>{{info[0]}}</th>
+<th>{{info[1]}}</th>
+<th>{{info[2]}}</th>
+</tr>
+</table>
+</div>
+</div>
+<script>
+<% array = @infoArray
+   for data in array
+     data[2] = Time.at(data[2]).strftime("%Y-%m-%d %H:%M:%S").to_s;
+   end
+%> 
+
+var vm = new Vue({
+  el: '#app',
+  data:{
+    infoArray: <%= array %>,
+  },
+});
+</script>
